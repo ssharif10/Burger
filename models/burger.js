@@ -20,12 +20,6 @@ var burger = {
 			cb(results);
 		});
 	},
-	delete: function(condition, callback) {
-		orm.delete("burgers", condition, function(results) {
-			cb(results);
-		});
-	}
-
 };
 
 module.exports = burger;
