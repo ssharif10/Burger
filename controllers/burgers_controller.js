@@ -6,7 +6,7 @@ var burger = require(".../models/burger.js");
 var router = express.Router();
 
 //displaying burgers in database
-router.get("/", function (request, result) {
+router.get("/", function (request, response) {
 	burger.all(function(data) {
 		var handleBarsOb = {
 			burgers: data
@@ -17,7 +17,7 @@ router.get("/", function (request, result) {
 });
 
 //adds new burger to database
-router.post("/", function (request, result) {
+router.post("/", function (request, response) {
 	burger.create([
 		"burger_name", "devoured"
 		], [
@@ -30,7 +30,7 @@ router.post("/", function (request, result) {
 	
 
 //changes the status of the burger
-router.put("/:id", function(request, result) {
+router.put("/:id", function(request, response) {
 	var status = "id = " + req.params.id;
 
 	console.log("status", status);
